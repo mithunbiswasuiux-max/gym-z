@@ -5,10 +5,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   variant?: "primary" | "ghost" | "outline";
   size?: "sm" | "md" | "lg" | "icon";
   children: React.ReactNode;
+  asChild?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = "primary", size = "md", children, ...props }, ref) => {
+  ({ className, variant = "primary", size = "md", children, asChild = false, ...props }, ref) => {
     const baseStyles = "inline-flex items-center justify-center rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]/50 disabled:opacity-50 disabled:pointer-events-none cursor-pointer";
     
     const variants = {
@@ -24,10 +25,20 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       icon: "h-12 w-12",
     };
 
+    const combinedClassName = cn(baseStyles, variants[variant], sizes[size], className);
+
+    if (asChild && React.isValidElement(children)) {
+      return React.cloneElement(children, {
+        // @ts-ignore
+        className: cn(combinedClassName, children.props.className),
+        ...props,
+      } as any);
+    }
+
     return (
       <button
         ref={ref}
-        className={cn(baseStyles, variants[variant], sizes[size], className)}
+        className={combinedClassName}
         {...props}
       >
         {children}
