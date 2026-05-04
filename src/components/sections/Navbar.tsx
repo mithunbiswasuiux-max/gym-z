@@ -45,7 +45,9 @@ export const Navbar = () => {
               {link.name}
             </a>
           ))}
-          <Button variant="primary" size="sm">Join Now</Button>
+          <Button variant="primary" size="sm" asChild>
+            <a href="#contact">Join Now</a>
+          </Button>
         </div>
         
         {/* Mobile Toggle */}
@@ -78,13 +80,8 @@ export const Navbar = () => {
                   {link.name}
                 </a>
               ))}
-              <Button 
-                variant="primary" 
-                size="lg" 
-                className="mt-8 px-12"
-                onClick={() => setIsOpen(false)}
-              >
-                Join Now
+              <Button variant="primary" size="lg" className="mt-8 px-12" asChild>
+                <a href="#contact" onClick={() => setIsOpen(false)}>Join Now</a>
               </Button>
             </motion.div>
           )}

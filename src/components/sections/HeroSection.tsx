@@ -34,7 +34,9 @@ export const HeroSection = () => {
           </p>
           
           <div className="flex flex-wrap items-center gap-4 mt-6">
-            <Button size="lg" variant="primary">Get Started</Button>
+            <Button size="lg" variant="primary" asChild>
+              <a href="#contact">Get Started</a>
+            </Button>
             <Button size="lg" variant="ghost" className="gap-2">
               <div className="bg-white/20 rounded-full p-1 flex items-center justify-center">
                 <Play className="w-4 h-4 fill-white text-white" />
@@ -52,6 +54,7 @@ export const HeroSection = () => {
                     alt={`User ${i}`} 
                     fill 
                     className="object-cover"
+                    sizes="48px"
                   />
                 </div>
               ))}
@@ -73,6 +76,7 @@ export const HeroSection = () => {
                 fill 
                 className="object-cover opacity-80"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
              />
              <div className="absolute inset-0 bg-gradient-to-tr from-[#111827] to-[#020617] mix-blend-overlay opacity-50" />
            </div>

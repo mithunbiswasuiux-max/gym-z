@@ -40,8 +40,8 @@ export const FAQSection = () => {
             <p className="font-sans font-medium mb-10 relative z-10 max-w-sm">
               Can&apos;t find the answer you&apos;re looking for? Reach out to our customer support team.
             </p>
-            <Button variant="outline" className="border-black text-black hover:bg-black/10 relative z-10">
-              Contact Us
+            <Button variant="outline" className="border-black text-black hover:bg-black/10 relative z-10" asChild>
+              <a href="#contact">Contact Us</a>
             </Button>
           </div>
 

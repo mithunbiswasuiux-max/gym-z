@@ -18,8 +18,8 @@ export const Footer = () => {
             <p className="text-gray-400 font-sans">First session is completely free. No commitments.</p>
           </div>
           
-          <Button variant="primary" size="lg" className="relative z-10">
-            Claim Free Session
+          <Button variant="primary" size="lg" className="relative z-10" asChild>
+            <a href="#contact">Claim Free Session</a>
           </Button>
         </div>
 

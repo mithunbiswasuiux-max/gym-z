@@ -93,6 +93,7 @@ export const TestimonialSection = () => {
                     alt={testimonials[currentIndex].author} 
                     fill 
                     className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 500px"
                   />
                 </div>
                 {/* Decorative background box */}

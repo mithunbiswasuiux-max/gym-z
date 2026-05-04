@@ -89,6 +89,7 @@ export const AboutSection = () => {
                 fill 
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 priority
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 40vw, 360px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#020617] via-transparent to-transparent opacity-60" />
               
